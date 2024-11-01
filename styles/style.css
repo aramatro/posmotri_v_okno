@@ -53,18 +53,15 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
   height: 386px;
-  margin-bottom: 16px;
+  margin-block-end: 16px;
+  inline-size: 711px;
 }
 
 .result__video {
-  object-fit: cover;
-}
-
-video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -119,7 +116,7 @@ video {
   outline: none;
 }
 
-.search-form__label:has(:not(:active):focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px #fff solid;
   outline-offset: 1px;
 }
@@ -153,17 +150,12 @@ video {
   background-color: #fff;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
 .search-form__pseudo-checkbox:focus {
   outline: none;
-}
-
-.search-form__pseudo-checkbox:focus-visible + span {
-  outline: 1px #fff solid;
-  outline-offset: 1px;
 }
 
 .button {
@@ -275,13 +267,17 @@ video {
 }
 
 .content__video-card-title {
+  max-width: 200px;
   margin-bottom: 6px;
+  overflow: hidden;
   color: #fff;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
